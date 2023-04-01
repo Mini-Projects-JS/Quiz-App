@@ -1,0 +1,126 @@
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 110%;
+    height: 110%;
+    background-image: url('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80');
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.heading {
+    color: rgb(255, 241, 215);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qnaContainer {
+    max-width: 400px;
+    outline: 3px dashed rgb(255, 199, 108);
+    padding: 0.7em;
+    border-radius: 1rem;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: relative;
+}
+
+.qnaContainer[data-active] {
+    display: block;
+}
+
+.question {
+    outline: 2px solid rgb(255, 31, 31);
+    font-size: 20px;
+    padding: 0.7em 1em;
+    text-transform: capitalize;
+    background-color: rgb(253, 117, 117);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.options {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.options >p {
+    font-size: 16px;
+    text-align: center;
+    outline: 2px solid rgb(133, 26, 255);
+    padding: 0.7em 1em;
+    text-transform: capitalize;
+    background-color: rgb(170, 96, 255);
+    color: white;
+    border-radius: 0.5rem;
+    transition: 0.1s ease-in-out;
+}
+
+.options >p:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.options >p:active {
+    background-color: rgb(133, 26, 255);
+    outline: 2px solid rgb(170, 96, 255);
+}
+
+.ans {
+    display: none;
+}
+
+.reset {
+    margin-top: 20px;
+    border: none;
+    padding: 1em 2em;
+    background-color: rgb(44, 170, 255);
+    border-radius: 0.7rem;
+    border: 3px solid dodgerblue;
+    font-family: inherit;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.reset:hover {
+    transform: scale(1.07);
+}
+
+.reset:active {
+    background-color: dodgerblue;
+    border: 2px solid rgb(44, 170, 255);
+}
+
+.result {
+    margin-top: 20px;
+    color: white;
+}
